@@ -61,19 +61,31 @@ span {
   border-radius: 50%;
   border: 5px solid red;
   margin-top: -60px;
-  box-shadow: 0 0 10px 5px rgba(194, 45, 45, 0.2);
+  box-shadow: 10px 10px 5px rgba(194, 45, 45, 0.2);;
 }
 
 .name {
   font-weight: 700;
+  font-size: 25px;
   padding-top: 50px;
   padding-bottom: 20px;
+  text-shadow: 2px 2px 5px red;
 }
 
 .stats {
   display: flex;
-  gap: 10px;
-  padding-top: 15px;
+  gap: 2rem;
+  padding: 20px 0;
+}
+
+.stats p:nth-child(1) {
+  font-weight: 700;
+}
+
+.posts, .likes, .works {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .address img,
@@ -98,7 +110,6 @@ span {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid red;
   padding: 5px;
 }
 
@@ -107,7 +118,45 @@ span {
   height: 30px;  
 }
 
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.button-container button {
+  min-width: 100px;
+  border-radius: 10px;
+  padding: 20px 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.button-container button:nth-child(1) {
+  background-color: #eb6565;
+}
+
+.button-container button:nth-child(2) {
+  background-color: #821186;
+}
+
+.button-container button:hover {
+  background-color: #745c5c;
+}
+
 footer {
   text-align: center;
   padding: 20px 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    max-width: 90%;
+    padding: 20px;   
+  }
+  footer {    
+    padding: 30px 0;
+  }
+  
 }
