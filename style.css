@@ -151,10 +151,24 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  header {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  header ul {
+    display: none;    
+  }
+
   .content {
     max-width: 90%;
     padding: 20px;   
   }
+
+  .button-container button {
+    padding: 10px 20px;
+  }
+
   footer {    
     padding: 30px 0;
   }
