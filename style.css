@@ -1,0 +1,113 @@
+*,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+}
+
+.content-wraper {
+  background: linear-gradient(to left, #821186, #3b1e32);
+  min-height: 100vh;
+}
+
+.item-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+  font-weight: 700;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.logo {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.content {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content p,
+span {
+  color: #821186;
+}
+
+.passport {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid red;
+  margin-top: -60px;
+  box-shadow: 0 0 10px 5px rgba(194, 45, 45, 0.2);
+}
+
+.name {
+  font-weight: 700;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  padding-top: 15px;
+}
+
+.address img,
+.role img {
+  width: 20px;
+  height: 20px;
+}
+
+.address,
+.role {
+  padding: 5px 0;
+  display: flex;
+  gap: 5px;
+}
+
+.address span,
+.role span, .stats p {
+  color: black;
+}
+
+.social-media > div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.social-media > div img{
+  width: 30px;
+  height: 30px;  
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
