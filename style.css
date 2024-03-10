@@ -166,8 +166,14 @@ footer {
     padding: 20px;   
   }
 
+  .button-container {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
   .button-container a {
-    padding: 10px 20px;
+    display: block;
   }
 
   footer {    
