@@ -113,9 +113,9 @@ span {
   padding: 5px;
 }
 
-.social-media > div img{
+.social-media > div img {
   width: 30px;
-  height: 30px;  
+  height: 30px;
 }
 
 .button-container {
@@ -123,23 +123,24 @@ span {
   gap: 20px;
 }
 
-.button-container button {
+.button-container a {
   min-width: 100px;
   border-radius: 10px;
   padding: 20px 50px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.button-container button:nth-child(1) {
+.button-container a:nth-child(1) {
   background-color: #eb6565;
 }
 
-.button-container button:nth-child(2) {
-  background-color: #821186;
+.button-container a:nth-child(2) {
+  background-color: #045f4b;
 }
 
-.button-container button:hover {
+.button-container a:hover {
   background-color: #745c5c;
 }
 
@@ -165,7 +166,7 @@ footer {
     padding: 20px;   
   }
 
-  .button-container button {
+  .button-container a {
     padding: 10px 20px;
   }
 
