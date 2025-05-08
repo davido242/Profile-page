@@ -39,6 +39,14 @@ header ul {
   text-transform: uppercase;
 }
 
+.small-letter {
+  text-transform: lowercase;
+  color: white;
+  font-size: 16px;
+}
+
+
+
 .content {
   max-width: 50%;
   margin: 0 auto;
