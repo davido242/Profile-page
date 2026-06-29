@@ -1,0 +1,25 @@
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Build
+build/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Serwist — generated at build time
+public/sw.js
+public/sw.js.map
+public/worker-*.js
+public/worker-*.js.map
+
+# Misc
+.DS_Store
+*.pem
+npm-debug.log*
