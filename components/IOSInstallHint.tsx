@@ -8,7 +8,7 @@ export default function IOSInstallHint() {
   useEffect(() => {
     const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent)
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches
-    const dismissed = sessionStorage.getItem('pwa-hint-dismissed')
+    const dismissed = localStorage.getItem('pwa-hint-dismissed')
 
     if (isIOS && !isStandalone && !dismissed) {
       setVisible(true)
@@ -18,30 +18,43 @@ export default function IOSInstallHint() {
   if (!visible) return null
 
   function dismiss() {
-    sessionStorage.setItem('pwa-hint-dismissed', '1')
+    localStorage.setItem('pwa-hint-dismissed', '1')
     setVisible(false)
   }
 
   return (
     <div
       style={{ zIndex: 2147483647 }}
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white text-[#821186] rounded-xl shadow-2xl p-4 flex items-start gap-3 pointer-events-auto"
+      className="fixed bottom-0 left-0 right-0 bg-white text-gray-800 shadow-[0_-4px_24px_rgba(0,0,0,0.15)] pointer-events-auto"
     >
-      <span className="text-2xl select-none">⬆️</span>
-      <div className="flex-1 text-sm">
-        <p className="font-bold mb-1">Install this app</p>
-        <p>
-          Tap <strong>Share</strong> then <strong>&ldquo;Add to Home Screen&rdquo;</strong> to
-          install OnlineMD on your device.
-        </p>
+      {/* top bar */}
+      <div className="flex items-center justify-between px-4 pt-3 pb-1">
+        <p className="font-bold text-[#821186] text-sm">Add to Home Screen</p>
+        <button
+          onTouchEnd={(e) => { e.stopPropagation(); dismiss() }}
+          onClick={dismiss}
+          className="w-[44px] h-[44px] flex items-center justify-center text-gray-400 text-lg"
+          aria-label="Dismiss"
+        >
+          ✕
+        </button>
       </div>
-      <button
-        onClick={dismiss}
-        className="min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 active:text-gray-700 text-xl rounded-lg -mr-2 -mt-1"
-        aria-label="Dismiss"
-      >
-        ✕
-      </button>
+
+      {/* steps */}
+      <ol className="px-4 pb-5 space-y-2 text-sm">
+        <li className="flex items-center gap-3">
+          <span className="w-6 h-6 rounded-full bg-[#821186] text-white text-xs flex items-center justify-center font-bold shrink-0">1</span>
+          <span>Tap the <strong>Share</strong> button <span className="inline-block bg-gray-100 rounded px-1">⬆</span> at the bottom of Safari</span>
+        </li>
+        <li className="flex items-center gap-3">
+          <span className="w-6 h-6 rounded-full bg-[#821186] text-white text-xs flex items-center justify-center font-bold shrink-0">2</span>
+          <span>Scroll down and tap <strong>&ldquo;Add to Home Screen&rdquo;</strong></span>
+        </li>
+        <li className="flex items-center gap-3">
+          <span className="w-6 h-6 rounded-full bg-[#821186] text-white text-xs flex items-center justify-center font-bold shrink-0">3</span>
+          <span>Tap <strong>&ldquo;Add&rdquo;</strong> — the app icon will appear on your home screen</span>
+        </li>
+      </ol>
     </div>
   )
 }
